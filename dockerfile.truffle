@@ -10,4 +10,6 @@ COPY ./migrations ./migrations/
 RUN npm i
 RUN npm install -g truffle@5.1.65
 
-CMD ["truffle","migrate", "--reset"]
+# CMD ["truffle","migrate", "--reset"]
+COPY ./test ./test/
+CMD ["truffle", "test", "test/TicketingSystem.test.js"]

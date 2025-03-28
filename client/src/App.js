@@ -42,9 +42,6 @@ class App extends Component {
   render() {
     return (
       <Router>
-
-        <div >
-          <ReactNotification />
           <nav style={{ padding: '0px 30px 0px 30px' }}>
             <div class="nav-wrapper" >
               <a href="/buyTickets" class="brand-logo left">Festival Marketplace</a>
@@ -68,8 +65,6 @@ class App extends Component {
             <Route path="/market" component={SecondaryMarket} />
             <Route path="/tickets" component={MyTickets} />
           </Switch>
-        </div>
-
       </Router >
     )
   }

@@ -122,10 +122,10 @@ contract FestivalNFT is Context, AccessControl, ERC721 {
         _saleTicketId.increment();
         uint256 saleTicketId = _saleTicketId.current();
 
-        require(
-            msg.sender == ownerOf(saleTicketId),
-            "Only initial purchase allowed"
-        );
+        // require(
+        //     msg.sender == ownerOf(saleTicketId),
+        //     "Only initial purchase allowed"
+        // );
 
         transferFrom(ownerOf(saleTicketId), buyer, saleTicketId);
 
@@ -181,7 +181,7 @@ contract FestivalNFT is Context, AccessControl, ERC721 {
         uint256 purchasePrice = _ticketDetails[ticketId].purchasePrice;
 
         require(
-            purchasePrice + ((purchasePrice * 110) / 100) > sellingPrice,
+            (purchasePrice * 110) / 100 > sellingPrice,
             "Re-selling price is more than 110%"
         );
 

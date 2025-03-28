@@ -6,6 +6,8 @@ services:
       dockerfile: dockerfile.ganache
     ports:
       - "8545:8545"
+    volumes:
+      - ./db:/db/
 
   truffle:
     build:
